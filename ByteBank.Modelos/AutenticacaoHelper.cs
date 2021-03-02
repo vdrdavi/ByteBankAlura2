@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Modelos
 {
-    class AutenticacaoHelper
+    public class AutenticacaoHelper
     {
         public bool CompararSenhas(string senhaVerdadeira, string senhaTentativa)
         {

@@ -13,11 +13,9 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            DateTime dataFimPagamento = new DateTime(2021, 6, 30);
-            DateTime dataCorrete = DateTime.Now;
-            TimeSpan diferencaDatas = dataFimPagamento - dataCorrete;
-            string mensagem = "Vencimento em " + TimeSpanHumanizeExtensions.Humanize(diferencaDatas);
-            Console.WriteLine(mensagem);
+            string url = "pagina?argumentos";
+            string argumentos = url.Substring(7);
+            Console.WriteLine(argumentos);
             Console.ReadLine();
         }
     }

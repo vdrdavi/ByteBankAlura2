@@ -14,7 +14,8 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             string url = "pagina?argumentos";
-            string argumentos = url.Substring(7);
+            int indiceInterrogação = url.IndexOf("?");
+            string argumentos = url.Substring(indiceInterrogação + 1);
             Console.WriteLine(argumentos);
             Console.ReadLine();
         }

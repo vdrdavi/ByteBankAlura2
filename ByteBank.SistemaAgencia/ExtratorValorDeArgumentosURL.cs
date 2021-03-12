@@ -24,7 +24,14 @@ namespace ByteBank.SistemaAgencia
         {
             string termo = nomeParametro + "=";
             int indiceTermos = _argumentos.IndexOf(termo);
-            return _argumentos.Substring(indiceTermos + termo.Length);
+            string resultado = _argumentos.Substring(indiceTermos + termo.Length);
+            int indiceEComercial = resultado.IndexOf('&');
+            if (indiceEComercial == -1)
+            {
+                return resultado;
+            }
+
+            return resultado.Remove(indiceEComercial);
         }
     }
 }

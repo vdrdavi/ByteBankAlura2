@@ -30,7 +30,7 @@ namespace ByteBank.SistemaAgencia
 
             Console.WriteLine(extrator.GetValor("origem"));
             Console.WriteLine(extrator.GetValor("destino"));
-            Console.WriteLine(extrator.GetValor("valor"));
+            Console.WriteLine(extrator.GetValor("VALOR"));
             Console.ReadLine();
         }
     }

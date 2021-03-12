@@ -22,15 +22,16 @@ namespace ByteBank.SistemaAgencia
         }
         public string GetValor(string nomeParametro)
         {
+            nomeParametro = nomeParametro.ToUpper();
+            string argumentosEmCaixaAlta = _argumentos.ToUpper();
             string termo = nomeParametro + "=";
-            int indiceTermos = _argumentos.IndexOf(termo);
+            int indiceTermos = argumentosEmCaixaAlta.IndexOf(termo);
             string resultado = _argumentos.Substring(indiceTermos + termo.Length);
             int indiceEComercial = resultado.IndexOf('&');
             if (indiceEComercial == -1)
             {
                 return resultado;
             }
-
             return resultado.Remove(indiceEComercial);
         }
     }

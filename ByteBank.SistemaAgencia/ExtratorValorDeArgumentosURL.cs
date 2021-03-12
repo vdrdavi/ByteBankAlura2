@@ -22,7 +22,9 @@ namespace ByteBank.SistemaAgencia
         }
         public string GetValor(string nomeParametro)
         {
-            return "lorem Ipsum";
+            string termo = nomeParametro + "=";
+            int indiceTermos = _argumentos.IndexOf(termo);
+            return _argumentos.Substring(indiceTermos + termo.Length);
         }
     }
 }

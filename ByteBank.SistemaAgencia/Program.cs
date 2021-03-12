@@ -24,6 +24,7 @@ namespace ByteBank.SistemaAgencia
             int indiceValor = indice + nomeArgumento.Length;
             string valorArgumento = palavra.Substring(indiceValor + 1);
 
+        
             Console.WriteLine(valorArgumento);
             Console.ReadLine();
         }

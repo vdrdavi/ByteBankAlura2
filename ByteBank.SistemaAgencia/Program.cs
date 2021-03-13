@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using Humanizer;
@@ -13,17 +14,12 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            //string url = "pagina?argumentos";
-            //int indiceInterrogação = url.IndexOf("?");
-            //string argumentos = url.Substring(indiceInterrogação + 1);
+            string padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
+            string texto = "Meu número é: 4324-2437";
+            Match match = Regex.Match(texto, padrao);
+            Console.WriteLine(match);
+            Console.ReadLine();
 
-            //string palavra = "moedaOrigem=real&moedaDestino=valor";
-            //string nomeArgumento = "moedaDestino";
-
-            //int indice = palavra.IndexOf(nomeArgumento);
-            //int indiceValor = indice + nomeArgumento.Length;
-            //string valorArgumento = palavra.Substring(indiceValor + 1);
-            
             string url = "www.bytebank.com/cambio?origem=real&destino=dolar&valor=420";
             ExtratorValorDeArgumentosURL extrator = new ExtratorValorDeArgumentosURL(url);
 

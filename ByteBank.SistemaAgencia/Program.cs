@@ -31,6 +31,21 @@ namespace ByteBank.SistemaAgencia
             #endregion
             ContaCorrente conta = new ContaCorrente(293, 23000);
             Console.WriteLine(conta);
+            
+            
+            Cliente carlos1 = new Cliente();
+            carlos1.Nome = "Carlos";
+            carlos1.CPF = "123.456.432-03";
+            carlos1.Profissao = "Desenvolvedor";
+            Cliente carlos2 = new Cliente();
+            carlos2.Nome = "Carlos";
+            carlos2.CPF = "123.456.432-03";
+            carlos2.Profissao = "Desenvolvedor";
+
+            if (carlos1.Equals(carlos2))
+            {
+                Console.WriteLine("São iguais!");
+            }
             Console.ReadLine();
         }
     }

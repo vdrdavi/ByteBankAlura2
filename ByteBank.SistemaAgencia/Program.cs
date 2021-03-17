@@ -14,38 +14,17 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            #region string
-            //string padrao = "[0-9]{4,5}[-, ]?[0-9]{4}";
-            //string texto = "Meu número é: 94324 2437";
-            //Match match = Regex.Match(texto, padrao);
-            //Console.WriteLine(match);
-            //Console.ReadLine();
+            // O valor padrão é utilizado em todas as posições de um array ao ser criado.
+            int[] idades = new int[] { 12, 34, 46, 21, 19 };            
 
-            //string url = "www.bytebank.com/cambio?origem=real&destino=dolar&valor=420";
-            //ExtratorValorDeArgumentosURL extrator = new ExtratorValorDeArgumentosURL(url);
-
-
-            //Console.WriteLine(extrator.GetValor("origem"));
-            //Console.WriteLine(extrator.GetValor("destino"));
-            //Console.WriteLine(extrator.GetValor("VALOR")); 
-            #endregion
-            ContaCorrente conta = new ContaCorrente(293, 23000);
-            Console.WriteLine(conta);
-            
-            
-            Cliente carlos1 = new Cliente();
-            carlos1.Nome = "Carlos";
-            carlos1.CPF = "123.456.432-03";
-            carlos1.Profissao = "Desenvolvedor";
-            Cliente carlos2 = new Cliente();
-            carlos2.Nome = "Carlos";
-            carlos2.CPF = "123.456.432-03";
-            carlos2.Profissao = "Desenvolvedor";
-
-            if (carlos1.Equals(carlos2))
+            int acumulador = 0;
+            for (int indice = 0; indice < idades.Length; indice++)
             {
-                Console.WriteLine("São iguais!");
+                acumulador += idades[indice];
             }
+            int media = acumulador / idades.Length;
+            Console.WriteLine(media);
+
             Console.ReadLine();
         }
     }

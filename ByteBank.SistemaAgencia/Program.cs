@@ -14,7 +14,10 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+            lista.Adicionar(new ContaCorrente(123, 2093847));
+            lista.Adicionar(new ContaCorrente(232, 4892478));
+            lista.Adicionar(new ContaCorrente(612, 3245233));
 
             Console.ReadLine();
         }

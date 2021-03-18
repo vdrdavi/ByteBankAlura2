@@ -17,5 +17,11 @@ namespace ByteBank.SistemaAgencia
             _itens = new ContaCorrente[5];
             _proximaPosicao = 0;
         }
+        public void Adicionar(ContaCorrente item)
+        {
+            _itens[_proximaPosicao] = item;
+            _proximaPosicao++;
+            Console.WriteLine($"Adicionando no índice {_proximaPosicao} conta {item.Agencia}/{item.Numero}");
+        }
     }
 }

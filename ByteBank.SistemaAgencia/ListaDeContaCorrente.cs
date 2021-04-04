@@ -20,9 +20,9 @@ namespace ByteBank.SistemaAgencia
         public void Adicionar(ContaCorrente item)
         {
             VerificarCapacidade(_proximaPosicao + 1);
+            Console.WriteLine($"Adicionando no índice {_proximaPosicao} conta {item.Agencia}/{item.Numero}");
             _itens[_proximaPosicao] = item;
             _proximaPosicao++;
-            Console.WriteLine($"Adicionando no índice {_proximaPosicao} conta {item.Agencia}/{item.Numero}");
         }
         private void VerificarCapacidade(int tamanhoNecessario)
         {
@@ -73,6 +73,14 @@ namespace ByteBank.SistemaAgencia
                 ContaCorrente conta = _itens[i];
                 Console.WriteLine($"Conta no índice {i}: numero {conta.Agencia}/{conta.Numero}");
             }
+        }
+        public ContaCorrente GetItemNoindice(int indice)
+        {
+            if (indice < 0 || indice >= _proximaPosicao)
+            {
+                throw new ArgumentOutOfRangeException(nameof(indice));
+            }
+            return _itens[indice];
         }
     }
 }

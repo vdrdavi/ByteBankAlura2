@@ -20,8 +20,12 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(345, 5345645));
             lista.Adicionar(new ContaCorrente(895, 1234124));
 
-            ContaCorrente conta = lista.GetItemNoindice(2);
-            Console.WriteLine($"{conta.Agencia}/{conta.Numero}");
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente conta = lista[i];
+                Console.WriteLine($"{conta.Agencia}/{conta.Numero}");
+            }
+
             Console.ReadLine();
         }
     }

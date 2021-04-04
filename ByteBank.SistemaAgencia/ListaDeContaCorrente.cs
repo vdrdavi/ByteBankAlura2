@@ -96,5 +96,12 @@ namespace ByteBank.SistemaAgencia
                 return GetItemNoindice(indice);
             }
         }
+        public void AdicionarVarios(params ContaCorrente[] itens)
+        {
+            foreach (ContaCorrente conta in itens)
+            {
+                Adicionar(conta);
+            }
+        }
     }
 }

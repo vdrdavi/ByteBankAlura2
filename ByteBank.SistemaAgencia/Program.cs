@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Extensoes;
 using Humanizer;
 
 
@@ -17,9 +18,9 @@ namespace ByteBank.SistemaAgencia
             List<int> idades = new List<int>();
             idades.AdicionarVarios(1, 15, 34, 54, 42, 23, 80, 58);
             idades.Remove(15);
-            for (int i = 0; i < idades.Count; i++)
+            foreach (int item in idades)
             {
-                Console.WriteLine(idades[i]);
+                Console.WriteLine(item);
             }
 
             Console.ReadLine();
